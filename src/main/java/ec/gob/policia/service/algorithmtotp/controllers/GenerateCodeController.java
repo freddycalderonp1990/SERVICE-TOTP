@@ -13,7 +13,7 @@ import jakarta.validation.Valid;
 
 public interface GenerateCodeController {
 
-    @Tag(name = "Algoritm-TOTP", description =
+    @Tag(name = "Generate-TOPT", description =
             "REST API Que utiliza el Algoritmo Topt para la autenticacion de doble factor")
 
     @Operation(

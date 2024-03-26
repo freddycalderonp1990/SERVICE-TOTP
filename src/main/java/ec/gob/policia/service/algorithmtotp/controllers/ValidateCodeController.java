@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 public interface ValidateCodeController {
 
-    @Tag(name = "Algoritm-Totp", description =
+    @Tag(name = "Validate-TOPT", description =
             "REST API Que utiliza el Algoritmo Topt para la autenticacion de doble factor")
 
     @Operation(
