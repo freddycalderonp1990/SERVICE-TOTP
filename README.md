@@ -2,12 +2,6 @@
 
 algorithm-totp
 
-## si al red no existe se debe crear
-```bash
-docker build --tag service-totp .
-```
-
-
 ## Create docker image
 
 Use the build command to create de Docker Image
