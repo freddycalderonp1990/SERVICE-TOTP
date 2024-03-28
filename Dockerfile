@@ -14,5 +14,5 @@ RUN chmod -R 777 /app/logs
 VOLUME /app/logs
 
 COPY --from=builder /app/target/*.jar /app/app.jar
-EXPOSE 8761
+EXPOSE 8088
 CMD ["java", "-jar", "/app/app.jar"]

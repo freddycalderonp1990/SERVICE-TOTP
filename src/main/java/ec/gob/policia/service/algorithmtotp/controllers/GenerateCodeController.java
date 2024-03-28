@@ -13,7 +13,7 @@ import jakarta.validation.Valid;
 
 public interface GenerateCodeController {
 
-    @Tag(name = "Generate-TOPT", description =
+    @Tag(name = "Generate-TOTP", description =
             "REST API Que utiliza el Algoritmo Topt para la autenticacion de doble factor")
 
     @Operation(
@@ -23,6 +23,6 @@ public interface GenerateCodeController {
                     "Obtiene el codigo Temporal basado en el algoritmo TOTP")
    // @RequestMapping("/algorithm-topt")
 
-    @PostMapping("/v1/algorithm-topt")
+    @PostMapping("/v1/algorithm-totp")
     ResponseEntity<ResponseGenerico> post(@Valid @RequestBody CodeRequestDto request) throws Exception;
 }

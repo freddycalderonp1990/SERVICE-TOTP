@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 public interface ValidateCodeController {
 
-    @Tag(name = "Validate-TOPT", description =
+    @Tag(name = "Validate-TOTP", description =
             "REST API Que utiliza el Algoritmo Topt para la autenticacion de doble factor")
 
     @Operation(
@@ -23,6 +23,6 @@ public interface ValidateCodeController {
                     "Valida el codigo Temporal basado en el algoritmo TOTP")
     // @RequestMapping("/algorithm-topt")
 
-    @PostMapping("/v1/algorithm-topt/validate")
+    @PostMapping("/v1/algorithm-totp/validate")
     ResponseEntity<ResponseGenerico> post(@Valid @RequestBody CodeValidateRequestDto request) throws Exception;
 }
