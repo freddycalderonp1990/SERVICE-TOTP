@@ -8,10 +8,12 @@ import ec.gob.policia.service.algorithmtotp.utils.ResponseGenerico;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @Slf4j
+@RequestMapping("/totps")
 public class ValidateCodeControllerImpl implements ValidateCodeController {
     @Autowired
     private ValidateCodeUseCase validateCodeUseCase;
