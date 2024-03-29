@@ -6,6 +6,11 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 
+import java.time.ZonedDateTime;
+import java.time.ZoneId;
+
+
+
 public class Date {
 
 
@@ -13,8 +18,15 @@ public class Date {
 
     public static String getFechaHora(String formatTime ) {
         //obtenemos la fecha del servidor
-        String fechaServer = DateTimeFormatter.ofPattern(formatTime)
-                .format(LocalDateTime.now());
+
+
+
+        // Obtener la fecha y hora actual en la zona horaria de Guayaquil
+        ZonedDateTime zonedDateTime = ZonedDateTime.now(ZoneId.of("America/Guayaquil"));
+
+        // Formatear la fecha y hora según tus preferencias
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(formatTime);
+        String fechaServer = zonedDateTime.format(formatter);
 
        //fechaServer= "2024-02-14 10:07:03";
 

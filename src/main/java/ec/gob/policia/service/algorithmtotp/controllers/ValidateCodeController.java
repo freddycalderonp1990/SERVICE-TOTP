@@ -36,7 +36,7 @@ public interface ValidateCodeController {
 
     @Operation(
             summary =
-                    "Obtiene la fercha y hora actual del servidor",
+                    "Obtiene la fecha y hora actual del servidor",
             description =
                     "")
     @GetMapping("/time")
