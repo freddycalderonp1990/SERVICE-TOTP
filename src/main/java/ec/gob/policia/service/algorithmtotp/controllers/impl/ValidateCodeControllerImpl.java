@@ -4,6 +4,7 @@ import ec.gob.policia.service.algorithmtotp.controllers.ValidateCodeController;
 import ec.gob.policia.service.algorithmtotp.dtos.CodeRequestDto;
 import ec.gob.policia.service.algorithmtotp.dtos.CodeValidateRequestDto;
 import ec.gob.policia.service.algorithmtotp.services.usecases.ValidateCodeUseCase;
+import ec.gob.policia.service.algorithmtotp.utils.Date;
 import ec.gob.policia.service.algorithmtotp.utils.ResponseGenerico;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,5 +29,23 @@ public class ValidateCodeControllerImpl implements ValidateCodeController {
 
         log.info("Validate Code Request {}",responseGenerico);
         return  ResponseEntity.ok(responseGenerico);
+    }
+
+    @Override
+    public ResponseEntity<ResponseGenerico> getTime() throws Exception {
+
+        String _formatTime = "yyyy-MM-dd HH:mm:ss";
+       String ferchaServer= Date.getFechaHora(_formatTime);
+
+        ResponseGenerico responseGenerico =new ResponseGenerico();
+
+
+        responseGenerico.setCodigo(200);
+        responseGenerico.setData(ferchaServer);
+        responseGenerico.setMensaje("Ok");
+
+
+        return  ResponseEntity.ok(responseGenerico);
+
     }
 }

@@ -7,6 +7,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
@@ -25,4 +26,19 @@ public interface ValidateCodeController {
 
     @PostMapping("/v1/algorithm-totp/validate")
     ResponseEntity<ResponseGenerico> post(@Valid @RequestBody CodeValidateRequestDto request) throws Exception;
+
+
+
+
+
+    @Tag(name = "Time Server", description =
+            "REST para obtener la fecha del servidor")
+
+    @Operation(
+            summary =
+                    "Obtiene la fercha y hora actual del servidor",
+            description =
+                    "")
+    @GetMapping("/time")
+    ResponseEntity<ResponseGenerico> getTime() throws Exception;
 }
